@@ -617,7 +617,7 @@ tip:"Favor the fairway—set up a confident approach to finish strong.",
 desc:"A fitting closing hole back towards the clubhouse."}
 
 };
-// ================= MEMBERSHIP =================
+  // ================= MEMBERSHIP =================  
 const membershipData = [
 { name:"Full Member",price:"£1,150",desc:"Unlimited golf."},
 { name:"7 Day Restricted",price:"£860",desc:"Flexible play."},
@@ -633,161 +633,6 @@ function updateClock(){
 }
 
 // ================= SLIDER =================
-let currentImages=[],currentIndex=0,slideInterval=null;
-
-function startSlider(){
-    clearInterval(slideInterval);
-    if(currentImages.length<=1) return;
-    slideInterval=setInterval(nextSlide,3000);
-}
-
-function updateImage(){
-    const img=document.getElementById('h-img');
-    img.style.opacity=0;
-    setTimeout(()=>{
-        img.src=currentImages[currentIndex];
-        img.style.opacity=1;
-        renderThumbnails();
-    },300);
-}
-
-function nextSlide(){currentIndex=(currentIndex+1)%currentImages.length;updateImage();}
-function prevSlide(){currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;updateImage();}
-
-// ================= THUMBNAILS =================
-function renderThumbnails(){
-    const c=document.getElementById('thumb-container');
-    c.innerHTML="";
-    currentImages.forEach((src,i)=>{
-        const img=document.createElement('img');
-        img.src=src;
-        img.className="h-16 w-24 object-cover cursor-pointer opacity-60 border-2";
-        if(i===currentIndex) img.classList.add('border-[#C5A367]','opacity-100');
-        img.onclick=()=>{
-            clearInterval(slideInterval);
-            currentIndex=i;
-            updateImage();
-        };
-        c.appendChild(img);
-    });
-}
-
-// ================= MAP =================
-function renderMap(h){
-    const map=document.getElementById('hole-map');
-    const pts=document.getElementById('map-points');
-    const tracer=document.getElementById('shot-tracer');
-
-    tracer.innerHTML="";
-    pts.innerHTML="";
-
-    if(!h.map){map.src="";return;}
-
-    map.src=h.map;
-    map.style.transform="scale(1)";
-
-    h.points.forEach((p,i)=>{
-        const d=document.createElement('div');
-        d.className="absolute w-4 h-4 bg-[#C5A367] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 cursor-pointer";
-        d.style.left=p.x+"%"; d.style.top=p.y+"%";
-
-        d.onclick=()=>{
-            map.style.transform=`scale(${p.zoom})`;
-            map.style.transformOrigin=`${p.x}% ${p.y}%`;
-            drawTracer(h.points,i);
-        };
-
-        pts.appendChild(d);
-    });
-}
-
-// ================= TRACER =================
-function drawTracer(points,active){
-    const svg=document.getElementById('shot-tracer');
-    svg.innerHTML="";
-
-    for(let i=0;i<active;i++){
-        const p1=points[i],p2=points[i+1];
-        const l=document.createElementNS("http://www.w3.org/2000/svg","line");
-        l.setAttribute("x1",p1.x+"%");
-        l.setAttribute("y1",p1.y+"%");
-        l.setAttribute("x2",p2.x+"%");
-        l.setAttribute("y2",p2.y+"%");
-        l.setAttribute("stroke","#C5A367");
-        l.setAttribute("stroke-width","3");
-        svg.appendChild(l);
-    }
-}
-
-// ================= SET HOLE =================
-function setHole(n){
-    const h=courseData[n];
-
-    document.getElementById('h-num').innerText=n.toString().padStart(2,'0');
-    document.getElementById('h-name').innerText=h.name;
-    document.getElementById('h-par-si').innerText=`P${h.par} / S${h.si}`;
-    document.getElementById('h-white').innerText=h.w;
-    document.getElementById('h-yellow').innerText=h.y;
-    document.getElementById('h-red').innerText=h.r;
-    document.getElementById('h-desc').innerText=h.desc;
-    document.getElementById('h-tip').innerText=h.tip;
-
-    currentImages=h.imgs;
-    currentIndex=0;
-
-    document.getElementById('h-img').src=currentImages[0];
-
-    renderThumbnails();
-    startSlider();
-    renderMap(h);
-
-    document.querySelectorAll('.hole-card').forEach(c=>c.classList.remove('active'));
-    document.getElementById(`h-${n}`).classList.add('active');
-}
-
-// ================= NAV =================
-const nav=document.getElementById('hole-nav-container');
-for(let i=1;i<=18;i++){
-    const d=document.createElement('div');
-    d.id=`h-${i}`;
-    d.className="hole-card p-4 border cursor-pointer";
-    d.innerHTML=`Hole ${i}`;
-    d.onclick=()=>setHole(i);
-    nav.appendChild(d);
-}
-
-// ================= SCORECARD =================
-function toggleScorecard(){
-    document.getElementById('scorecard-modal').classList.toggle('hidden');
-}
-
-function buildScorecard(){
-   <script>
-
-// ================= COURSE DATA (UNCHANGED STRUCTURE, JUST SAFE DEFAULTS) =================
-const courseData = {
-
-1:{name:"The Dog-Leg",imgs:["images/hole1-1.webp","images/hole1-2.webp"],map:"images/hole1-map.webp",
-points:[{x:85,y:80,zoom:1.2},{x:55,y:55,zoom:1.4},{x:20,y:25,zoom:1.6}],
-w:483,y:473,r:464,par:5,si:9,tip:"A straight tee shot is required to a long left sweeping fairway.",desc:"A challenging start to the round requiring precision from the tee."},
-
-2:{name:"Risk & Reward",imgs:["images/hole2-1.webp","images/hole2-2.webp"],map:"images/hole2-map.webp",
-points:[{x:20,y:75,zoom:1.2},{x:55,y:50,zoom:1.4},{x:85,y:25,zoom:1.6}],
-w:257,y:251,r:167,par:"4/3",si:"17/11",tip:"A steady tee shot followed by an accurate pitch to a narrow raised green.",desc:"Test your nerve on this tactical short hole."},
-
-// KEEP YOUR OTHER HOLES EXACTLY AS THEY ARE
-
-};
-
-// ================= CLOCK =================
-function updateClock(){
-    const now=new Date();
-    document.getElementById('live-clock').innerText =
-    now.toLocaleString('en-GB',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    document.getElementById('year').innerText=now.getFullYear();
-}
-
-// ================= SLIDER (FIXED + SMOOTH) =================
 let currentImages=[],currentIndex=0,slideInterval=null;
 
 function startSlider(){
@@ -872,13 +717,13 @@ function renderMap(h){
         pts.appendChild(d);
     });
 
-    // AUTO PLAY TRACER (tour feel)
+    // auto animate
     setTimeout(()=>{
         drawTracer(h.points,h.points.length-1);
     },500);
 }
 
-// ================= TOUR-LEVEL TRACER =================
+// ================= TRACER =================
 function drawTracer(points,active){
     const svg=document.getElementById('shot-tracer');
     svg.innerHTML="";
@@ -904,10 +749,7 @@ function drawTracer(points,active){
 
 // tracer animation
 const style=document.createElement('style');
-style.innerHTML=`
-@keyframes trace {
-    to { stroke-dashoffset: 0; }
-}`;
+style.innerHTML=`@keyframes trace { to { stroke-dashoffset: 0; } }`;
 document.head.appendChild(style);
 
 // ================= SET HOLE =================
@@ -934,7 +776,8 @@ function setHole(n){
     renderMap(h);
 
     document.querySelectorAll('.hole-card').forEach(c=>c.classList.remove('active'));
-    document.getElementById(`h-${n}`).classList.add('active');
+    const active=document.getElementById(`h-${n}`);
+    if(active) active.classList.add('active');
 }
 
 // ================= NAV =================
@@ -956,23 +799,49 @@ function toggleScorecard(){
 function buildScorecard(){
     const body=document.getElementById('scorecard-body');
     body.innerHTML="";
+
     for(let i=1;i<=18;i++){
         const h=courseData[i];
         if(!h) continue;
 
         body.innerHTML+=`<tr>
-        <td>${i}</td><td>${h.name}</td>
-        <td>${h.w}</td><td>${h.y}</td><td>${h.r}</td>
-        <td>${h.par}</td><td>${h.si}</td></tr>`;
+        <td>${i}</td>
+        <td>${h.name}</td>
+        <td>${h.w}</td>
+        <td>${h.y}</td>
+        <td>${h.r}</td>
+        <td>${h.par}</td>
+        <td>${h.si}</td>
+        </tr>`;
     }
+}
+
+// ================= MEMBERSHIP UI =================
+function buildMembership(){
+    const grid=document.getElementById('membership-grid');
+    if(!grid) return;
+
+    grid.innerHTML="";
+    membershipData.forEach(m=>{
+        grid.innerHTML+=`
+        <div class="border border-white/20 p-6 text-center">
+            <h4 class="serif text-2xl text-[#C5A367] mb-2">${m.name}</h4>
+            <p class="text-3xl font-bold mb-2">${m.price}</p>
+            <p class="text-white/70 text-sm">${m.desc}</p>
+        </div>`;
+    });
 }
 
 // ================= INIT =================
 updateClock();
 setInterval(updateClock,1000);
+
 buildScorecard();
+buildMembership();
 setHole(1);
 
 </script>
+
+
  </body>
 </html>
