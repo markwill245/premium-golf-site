@@ -368,253 +368,80 @@
 <script>
 
 const courseData = {
+// ================= COURSE DATA =================
+const courseData = {
 
-1:{name:"The Dog-Leg",
-imgs:["images/hole1-1.webp","images/hole1-2.webp","images/hole1.webp"],
-img:"images/hole1.webp",map:"images/hole1-map.webp",
-points:[
-{x:88,y:85,zoom:1.1},
-{x:70,y:70,zoom:1.2},
-{x:50,y:50,zoom:1.3},
-{x:30,y:30,zoom:1.5},
-{x:18,y:18,zoom:1.7}
-],
-w:483,y:473,r:464,par:5,si:9,
-tip:"Favor the right side of the fairway to open up the sweeping second shot into the green.",
-desc:"A classic opening par 5 bending left—positioning from the tee is everything."},
+1:{name:"The Dog-Leg",imgs:["images/hole1.webp"],map:"images/hole1-map.webp",
+points:[{x:85,y:80,zoom:1.2},{x:55,y:55,zoom:1.4},{x:20,y:25,zoom:1.6}],
+w:483,y:473,r:464,par:5,si:9,tip:"Favor the right side for best angle.",desc:"A strong opening par 5 requiring positioning."},
 
-2:{name:"Risk & Reward",
-imgs:["images/hole2-1.webp","images/hole2-2.webp","images/hole2.webp"],
-img:"images/hole2.webp",map:"images/hole2-map.webp",
-points:[
-{x:85,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:35,y:40,zoom:1.5},
-{x:25,y:25,zoom:1.7}
-],
-w:257,y:251,r:167,par:"4/3",si:"17/11",
-tip:"Commit to your line—lay up safely or attack the green, indecision costs shots.",
-desc:"Short but dangerous. A true decision hole demanding confidence."},
+2:{name:"Risk & Reward",imgs:["images/hole2.webp"],map:"images/hole2-map.webp",
+points:[{x:80,y:85,zoom:1.2},{x:55,y:55,zoom:1.4},{x:25,y:25,zoom:1.6}],
+w:257,y:251,r:167,par:"4/3",si:"17/11",tip:"Commit fully to your choice.",desc:"Short but dangerous decision hole."},
 
-3:{name:"Marker Pole",
-imgs:["images/hole3.webp"],
-img:"images/hole3.webp",map:"images/hole3-map.webp",
-points:[
-{x:50,y:90,zoom:1.1},
-{x:50,y:70,zoom:1.2},
-{x:50,y:50,zoom:1.3},
-{x:50,y:30,zoom:1.5},
-{x:50,y:12,zoom:1.7}
-],
-w:443,y:433,r:421,par:"4/5",si:1,
-tip:"Trust your line off the tee—commit fully to the blind shot.",
-desc:"One of the toughest holes on the course with a demanding blind drive."},
+3:{name:"Marker Pole",imgs:["images/hole3.webp"],map:"images/hole3-map.webp",
+points:[{x:50,y:85,zoom:1.2},{x:50,y:50,zoom:1.4},{x:50,y:15,zoom:1.6}],
+w:443,y:433,r:421,par:"4/5",si:1,tip:"Trust your line.",desc:"Blind tee shot with danger ahead."},
 
-4:{name:"The Stamp",
-imgs:["images/hole4.webp"],
-img:"images/hole4.webp",map:"images/hole4-map.webp",
-points:[
-{x:50,y:80,zoom:1.2},
-{x:50,y:65,zoom:1.3},
-{x:50,y:50,zoom:1.4},
-{x:50,y:40,zoom:1.6}
-],
-w:143,y:131,r:119,par:3,si:13,
-tip:"Middle of the green is always the smart play—avoid chasing pins.",
-desc:"A short par 3 with punishing bunkers guarding the front."},
+4:{name:"The Stamp",imgs:["images/hole4.webp"],map:"images/hole4-map.webp",
+points:[{x:50,y:80,zoom:1.2},{x:50,y:60,zoom:1.3},{x:50,y:40,zoom:1.5}],
+w:143,y:131,r:119,par:3,si:13,tip:"Middle of green is best.",desc:"Short but punishing par 3."},
 
-5:{name:"The Plateau",
-imgs:["images/hole5.webp"],
-img:"images/hole5.webp",map:"images/hole5-map.webp",
-points:[
-{x:75,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:55,y:55,zoom:1.3},
-{x:45,y:40,zoom:1.5},
-{x:35,y:25,zoom:1.7}
-],
-w:425,y:415,r:334,par:4,si:"3/17",
-tip:"A solid tee shot to the plateau is key—club selection into the green is critical.",
-desc:"The opening test of Amen Corner—accuracy over power."},
+5:{name:"The Plateau",imgs:["images/hole5.webp"],map:"images/hole5-map.webp",
+points:[{x:70,y:85,zoom:1.2},{x:55,y:60,zoom:1.4},{x:35,y:30,zoom:1.6}],
+w:425,y:415,r:334,par:4,si:"3/17",tip:"Accuracy over power.",desc:"Start of Amen Corner."},
 
-6:{name:"Hells Corner",
-imgs:["images/hole6.webp"],
-img:"images/hole6.webp",map:"images/hole6-map.webp",
-points:[
-{x:80,y:80,zoom:1.1},
-{x:70,y:65,zoom:1.2},
-{x:60,y:55,zoom:1.3},
-{x:50,y:45,zoom:1.5}
-],
-w:182,y:174,r:159,par:3,si:"7/9",
-tip:"Play for the center—anything offline will feed away from the target.",
-desc:"A demanding par 3 with a sloping green that punishes misses."},
+6:{name:"Hells Corner",imgs:["images/hole6.webp"],map:"images/hole6-map.webp",
+points:[{x:75,y:80,zoom:1.2},{x:60,y:55,zoom:1.3},{x:45,y:30,zoom:1.5}],
+w:182,y:174,r:159,par:3,si:"7/9",tip:"Center of green.",desc:"Tough sloping green."},
 
-7:{name:"The Bank",
-imgs:["images/hole7.webp"],
-img:"images/hole7.webp",map:"images/hole7-map.webp",
-points:[
-{x:82,y:82,zoom:1.1},
-{x:70,y:65,zoom:1.2},
-{x:60,y:50,zoom:1.3},
-{x:50,y:35,zoom:1.5}
-],
-w:199,y:180,r:150,par:3,si:"5/7",
-tip:"Club up and swing smoothly—short is not an option here.",
-desc:"The final exam of Amen Corner—tight, exposed, and unforgiving."},
+7:{name:"The Bank",imgs:["images/hole7.webp"],map:"images/hole7-map.webp",
+points:[{x:80,y:80,zoom:1.2},{x:60,y:55,zoom:1.3},{x:40,y:30,zoom:1.5}],
+w:199,y:180,r:150,par:3,si:"5/7",tip:"Club up.",desc:"Tight and exposed."},
 
-8:{name:"The Summit",
-imgs:["images/hole8.webp"],
-img:"images/hole8.webp",map:"images/hole8-map.webp",
-points:[
-{x:78,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:55,y:55,zoom:1.3},
-{x:45,y:35,zoom:1.5},
-{x:35,y:20,zoom:1.7}
-],
-w:298,y:291,r:272,par:4,si:"15/5",
-tip:"Control your distance—the elevated green exaggerates everything.",
-desc:"Spectacular views and a deceptively tricky approach."},
+8:{name:"The Summit",imgs:["images/hole8.webp"],map:"images/hole8-map.webp",
+points:[{x:75,y:85,zoom:1.2},{x:55,y:60,zoom:1.4},{x:35,y:25,zoom:1.6}],
+w:298,y:291,r:272,par:4,si:"15/5",tip:"Control distance.",desc:"Elevated green."},
 
-9:{name:"Devils Horns",
-imgs:["images/hole9.webp"],
-img:"images/hole9.webp",map:"images/hole9-map.webp",
-points:[
-{x:75,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:55,y:55,zoom:1.3},
-{x:45,y:40,zoom:1.5},
-{x:35,y:25,zoom:1.7}
-],
-w:388,y:382,r:314,par:4,si:"11/15",
-tip:"Use the slope—feed the ball in rather than fighting it.",
-desc:"A strategic hole where contours dictate play."},
+9:{name:"Devils Horns",imgs:["images/hole9.webp"],map:"images/hole9-map.webp",
+points:[{x:70,y:85,zoom:1.2},{x:55,y:60,zoom:1.4},{x:35,y:30,zoom:1.6}],
+w:388,y:382,r:314,par:4,si:"11/15",tip:"Use the slopes.",desc:"Strategic play required."},
 
-10:{name:"The Dell",
-imgs:["images/hole10.webp"],
-img:"images/hole10.webp",map:"images/hole10-map.webp",
-points:[
-{x:75,y:85,zoom:1.1},
-{x:60,y:70,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:40,y:40,zoom:1.5},
-{x:30,y:25,zoom:1.7}
-],
-w:322,y:310,r:251,par:4,si:"16/14",
-tip:"Position over power—set up a simple approach.",
-desc:"A scoring opportunity if played with discipline."},
+10:{name:"The Dell",imgs:["images/hole10.webp"],map:"images/hole10-map.webp",
+points:[{x:70,y:85,zoom:1.2},{x:50,y:60,zoom:1.4},{x:30,y:30,zoom:1.6}],
+w:322,y:310,r:251,par:4,si:"16/14",tip:"Play smart.",desc:"Scoring chance."},
 
-11:{name:"The Trap",
-imgs:["images/hole11.webp"],
-img:"images/hole11.webp",map:"images/hole11-map.webp",
-points:[
-{x:60,y:80,zoom:1.1},
-{x:55,y:65,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:45,y:45,zoom:1.5}
-],
-w:173,y:163,r:105,par:3,si:"10/18",
-tip:"Take enough club—commit to clearing the hazards.",
-desc:"Deceptively short with danger lurking both sides."},
+11:{name:"The Trap",imgs:["images/hole11.webp"],map:"images/hole11-map.webp",
+points:[{x:60,y:80,zoom:1.2},{x:50,y:60,zoom:1.3},{x:40,y:40,zoom:1.5}],
+w:173,y:163,r:105,par:3,si:"10/18",tip:"Take enough club.",desc:"Danger both sides."},
 
-12:{name:"Calm",
-imgs:["images/hole12.webp"],
-img:"images/hole12.webp",map:"images/hole12-map.webp",
-points:[
-{x:75,y:85,zoom:1.1},
-{x:60,y:70,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:40,y:40,zoom:1.5},
-{x:30,y:25,zoom:1.7}
-],
-w:269,y:264,r:258,par:4,si:"18/16",
-tip:"Attack with confidence—this is your birdie chance.",
-desc:"A welcome breather offering scoring opportunities."},
+12:{name:"Calm",imgs:["images/hole12.webp"],map:"images/hole12-map.webp",
+points:[{x:70,y:85,zoom:1.2},{x:50,y:60,zoom:1.4},{x:30,y:30,zoom:1.6}],
+w:269,y:264,r:258,par:4,si:"18/16",tip:"Attack confidently.",desc:"Birdie opportunity."},
 
-13:{name:"Blind Ascent",
-imgs:["images/hole13.webp"],
-img:"images/hole13.webp",map:"images/hole13-map.webp",
-points:[
-{x:85,y:85,zoom:1.1},
-{x:70,y:70,zoom:1.2},
-{x:60,y:55,zoom:1.3},
-{x:50,y:40,zoom:1.5},
-{x:40,y:20,zoom:1.7}
-],
-w:523,y:452,r:442,par:5,si:"6/8",
-tip:"Stay patient—this hole rewards positioning over aggression.",
-desc:"A long, demanding par 5 climbing steadily to the green."},
+13:{name:"Blind Ascent",imgs:["images/hole13.webp"],map:"images/hole13-map.webp",
+points:[{x:80,y:85,zoom:1.2},{x:60,y:55,zoom:1.4},{x:40,y:20,zoom:1.6}],
+w:523,y:452,r:442,par:5,si:"6/8",tip:"Stay patient.",desc:"Long uphill par 5."},
 
-14:{name:"The Snap",
-imgs:["images/hole14.webp"],
-img:"images/hole14.webp",map:"images/hole14-map.webp",
-points:[
-{x:60,y:80,zoom:1.1},
-{x:55,y:65,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:45,y:45,zoom:1.5}
-],
-w:174,y:168,r:154,par:3,si:"14/12",
-tip:"Flight control is key—judge wind and elevation carefully.",
-desc:"A picturesque but tricky downhill par 3."},
+14:{name:"The Snap",imgs:["images/hole14.webp"],map:"images/hole14-map.webp",
+points:[{x:60,y:80,zoom:1.2},{x:50,y:60,zoom:1.3},{x:40,y:40,zoom:1.5}],
+w:174,y:168,r:154,par:3,si:"14/12",tip:"Judge wind.",desc:"Downhill beauty."},
 
-15:{name:"The Climb",
-imgs:["images/hole15.webp"],
-img:"images/hole15.webp",map:"images/hole15-map.webp",
-points:[
-{x:78,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:55,y:55,zoom:1.3},
-{x:45,y:40,zoom:1.5},
-{x:35,y:25,zoom:1.7}
-],
-w:304,y:298,r:294,par:4,si:"8/2",
-tip:"Take an extra club—uphill approach demands it.",
-desc:"Plays longer than it looks with a relentless rise."},
+15:{name:"The Climb",imgs:["images/hole15.webp"],map:"images/hole15-map.webp",
+points:[{x:75,y:85,zoom:1.2},{x:55,y:60,zoom:1.4},{x:35,y:30,zoom:1.6}],
+w:304,y:298,r:294,par:4,si:"8/2",tip:"Take extra club.",desc:"Uphill challenge."},
 
-16:{name:"High Pressure",
-imgs:["images/hole16.webp"],
-img:"images/hole16.webp",map:"images/hole16-map.webp",
-points:[
-{x:85,y:85,zoom:1.1},
-{x:70,y:70,zoom:1.2},
-{x:60,y:55,zoom:1.3},
-{x:50,y:40,zoom:1.5},
-{x:40,y:25,zoom:1.7}
-],
-w:436,y:430,r:419,par:"4/5",si:"2/4",
-tip:"Commit to every shot—this hole exposes hesitation.",
-desc:"A brutally tough hole demanding power and precision."},
+16:{name:"High Pressure",imgs:["images/hole16.webp"],map:"images/hole16-map.webp",
+points:[{x:80,y:85,zoom:1.2},{x:60,y:60,zoom:1.4},{x:40,y:25,zoom:1.6}],
+w:436,y:430,r:419,par:"4/5",si:"2/4",tip:"Commit fully.",desc:"Brutal test."},
 
-17:{name:"The Firs",
-imgs:["images/hole17.webp"],
-img:"images/hole17.webp",map:"images/hole17-map.webp",
-points:[
-{x:80,y:85,zoom:1.1},
-{x:65,y:70,zoom:1.2},
-{x:55,y:55,zoom:1.3},
-{x:45,y:40,zoom:1.5},
-{x:35,y:25,zoom:1.7}
-],
-w:416,y:406,r:392,par:"4/5",si:"4/10",
-tip:"Stay composed—this is where rounds are won or lost.",
-desc:"A demanding penultimate hole framed by trees."},
+17:{name:"The Firs",imgs:["images/hole17.webp"],map:"images/hole17-map.webp",
+points:[{x:75,y:85,zoom:1.2},{x:55,y:60,zoom:1.4},{x:35,y:25,zoom:1.6}],
+w:416,y:406,r:392,par:"4/5",si:"4/10",tip:"Stay composed.",desc:"Penultimate test."},
 
-18:{name:"The Finale",
-imgs:["images/hole18.webp"],
-img:"images/hole18.webp",map:"images/hole18-map.webp",
-points:[
-{x:75,y:85,zoom:1.1},
-{x:60,y:70,zoom:1.2},
-{x:50,y:55,zoom:1.3},
-{x:40,y:40,zoom:1.5},
-{x:30,y:25,zoom:1.7}
-],
-w:318,y:308,r:298,par:4,si:"12/6",
-tip:"Favor the fairway—set up a confident approach to finish strong.",
-desc:"A fitting closing hole back towards the clubhouse."}
+18:{name:"The Finale",imgs:["images/hole18.webp"],map:"images/hole18-map.webp",
+points:[{x:70,y:85,zoom:1.2},{x:50,y:60,zoom:1.4},{x:30,y:30,zoom:1.6}],
+w:318,y:308,r:298,par:4,si:"12/6",tip:"Finish strong.",desc:"Closing hole."}
 
 };
   // ================= MEMBERSHIP =================  
