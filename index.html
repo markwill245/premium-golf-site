@@ -10,14 +10,15 @@
 :root { --gold: #C5A367; --forest: #132419; --cream: #F9F7F2; }
 
 body { 
-    font-family: 'Outfit', sans-serif; 
-	.serif {
-    font-family: 'Cormorant Garamond', serif;
-}
+    font-family: 'Outfit', sans-serif;
     background-color: var(--cream); 
     color: var(--forest); 
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+}
+
+.serif {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 /* HEADER */
@@ -582,17 +583,16 @@ function setHole(n){
 
 // SCORECARD
 
- function toggleScorecard(){
+
+function toggleScorecard(){
     const modal = document.getElementById('scorecard-modal');
     modal.classList.toggle('hidden');
     modal.classList.toggle('flex');
 
     const body = document.getElementById('scorecard-body');
 
-    // CLEAR FIRST (important)
     body.innerHTML = '';
 
-    // LOOP ALL 18 HOLES
     for(let i = 1; i <= 18; i++){
         const h = courseData[i];
 
@@ -607,7 +607,7 @@ function setHole(n){
             <td class="p-3 font-black">${h.si}</td>
         </tr>`;
     }
-} 
+}
 
 // NAV
 const navCont=document.getElementById('hole-nav-container');
