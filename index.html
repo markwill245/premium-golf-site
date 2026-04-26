@@ -464,226 +464,47 @@ button:active, a:active { transform: scale(0.97); }
         </div>
     </div>
 
-    <script>
-        const courseData = {
-           1: { 
-    name: "The Dog-Leg",
-    imgs: [
-        "images/hole1.webp",
-        "images/hole1-1.webp",
-       
-    ],
-    w: 483, y: 473, r: 464,
-    par: 5, si: 9,
-    tip: "A straight tee shot is required...",
-    desc: "A challenging start to the round requiring precision from the Tee."},
-},
-            2: {
-    name: "Risk & Reward",
-	imgs: "images/hole2.webp",
-	imgs: "images2-2.webp",
-	
-	},
-	w: 257, y: 251, r: 167,
-	par: "4/3",si: "17/11", 
-	tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.",
-	desc: "Test your nerve on this tactical short hole." }, 
-	 
-           3: { 
-	name: "Marker Pole",
-	imgs: "images/hole3.webp",
-	imgs: "images/hole3-3.webp",
-	
-	},
-	w: 443, y: 433, r: 421,
-	par: "4/5", si: 1,
-	tip: "A difficult blind straight tee shot.",
-	desc: "Note the horizontal dry ditch across the fairway." },
-	
-		   
-           4: { name: "The Stamp",
-		   imgs: "images/hole4.webp",
-		   imgs: "images/hole4-4.webp",
-		   
-		   },
-		   w: 143, y: 131, r: 119,
-		   par: 3, si: 13,
-		   tip: "Our own postage stamp hole with a bunker across the front.",
-		   desc: "Short but dangerous. Club selection is everything." },
-		   
-           5: { name: "The Plateau",
-		   imgs: "images/hole5.webp",
-		   imgs: "images/hole5-5.webp",
-		   
-		   },
-		   w: 425, y: 415, r: 334,
-		   par: 4, si: "3/17", 
-		   tip: "Steady shot onto the top of a plateau fairway.",
-		   desc: "The first hole of our famous 'Amen Corner'." },
-		   
-           6: { name: "Hells Corner",
-		   imgs: "images/hole6.webp",
-		   imgs: "images/hole6-6.webp",
-		   
-		   },
-		   w: 182, y: 174, r: 159,
-		   par: 3, si: "7/9", 
-		   tip: "A long difficult hole to a right to left sloping green.", 
-		   desc: "The second challenge of Amen Corner." },
-		   
-           7: { name: "The Bank", 
-		   imgs: "images/hole7.webp",
-		   imgs: "images/hole7-7.webp",
-		   
-		   },
-		   w: 199, y: 180, r: 150,
-		   par: 3, si: "5/7",
-		   tip: "Very little room for manoeuvre.",
-		   desc: "The finale of Amen Corner." },
-		   
-           8: { name: "The Summit",
-		   imgs: "images/hole8.webp",
-		   imgs: "images/hole8-8.webp",
-		   
-		   },
-		   w: 298, y: 291, r: 272,
-		   par: 4, si: "15/5",
-		   tip: "Outstanding views across several counties.",
-		   desc: "The peak of the course with breathtaking panoramas." },
-		   
-           9: { name: "Devils Horns",
-		   imgs: "images/hole9.webp",
-           imgs: "images/hole9-9.webp",
-		   
-		   },
-		   w: 388, y: 382, r: 314,
-		   par: 4, si: "11/15",
-		   tip: "Everything falls right onto the green.", 
-		   desc: "A tight fairway that tests your ability to play the slopes." },
-		   
-		   
-           10: { name: "The Dell",
-		   imgs: "images/hole10.webp",
-		   imgs:"images/hole10-10.webp",
-		   
-		   },
-		   w: 322, y: 310, r: 251,
-		   par: 4, si: "16/14",
-		   tip: "A straight forward hole onto a slightly raised green.", 
-		   desc: "Accuracy is rewarded on this scenic par 4." },
-		   
-           11: { name: "The Trap", 
-		   imgs: "images/hole11.webp", 
-		   imgs:"images/hole11-11.webp",
-		   
-		   },
-		   w: 173, y: 163, r: 105,
-		   par: 3, si: "10/18",
-		   tip: "Bunkers either side to be aware of.",
-		   desc: "Stay centered to avoid the sand traps." },
-		   
-           12: { name: "Calm",
-		   imgs: "images/hole12.webp",
-		   imgs:"images/hole12-12.webp",
-		   
-		   },
-		   w: 269, y: 264, r: 258,
-		   par: 4, si: "18/16",
-		   tip: "Possible to hit the green with a good tee shot.",
-		   desc: "A generous fairway offering a real birdie opportunity." },
-		   
-           13: { name: "Blind Ascent",
-		   imgs: "images/hole13.webp",
-		   imgs: "images/hole13-13.webp",
-		   
-		   },
-		   w: 523, y: 452, r: 442,
-		   par: 5, si: "6/8",
-		   tip: "A late dogleg left after downhill shots.",
-		   desc: "A long journey home requiring strong ball striking." },
-		   
-           14: { name: "The Snap",
-		   imgs: "images/hole14.webp",
-		   imgs:"images/hole14-14.webp",
-		   
-		   },
-		   w: 174, y: 168, r: 154,
-		   par: 3, si: "14/12",
-		   tip: "A slightly downhill green requires an accurate tee shot.",
-		   desc: "A beautiful drop shot par 3." },
-		   
-           15: { name: "The Climb",
-		   imgs: "images/hole15.webp",
-		   imgs:"images/hole15-15.webp",
-		   
-		   },
-		   w: 304, y: 298, r: 294,
-		   par: 4, si: "8/2", 
-		   tip: "Uphill ground makes it longer than you think.", 
-		   desc: "Don't let the yardage fool you." },
-		   
-           16: { name: "High Pressure",
-		   imgs: "images/hole16.webp",
-		   imgs: "images/hole16-16.webp",
-		   
-		   },
-		   w: 436, y: 430, r: 419, 
-		   par: "4/5", si: "2/4",
-		   tip: "A very tough long hole with a ditch.",
-		   desc: "Tests your nerve and power." },
-		   
-           17: { name: "The Firs", 
-		   imgs: "images/hole17.webp",
-		   imgs:"images/hole17-17.webp",
-		   
-		   },
-		   w: 416, y: 406, r: 392,
-		   par: "4/5", si: "4/10", 
-		   tip: "A par requires four very good shots.",
-		   desc: "A demanding hole as you approach the clubhouse." },
-		   
-           18: { name: "The Finale", 
-		   imgs: "images/hole18.webp",
-		   imgs:"images/hole18-18.webp",
-		   
-		   },
-		   w: 318, y: 308, r: 298, 
-		   par: 4, si: "12/6", 
-		   tip: "A slight dogleg right brings you home.",
-		   desc: "A finishing hole in front of the members." }
-        };
+<script>
+const courseData = {
+1:{name:"The Dog-Leg",imgs:["images/hole1.webp","images/hole1-1.webp"],w:483,y:473,r:464,par:5,si:9,tip:"A straight tee shot is required...",desc:"A challenging start."},
+2:{name:"Risk & Reward",imgs:["images/hole2.webp","images/hole2-2.webp"],w:257,y:251,r:167,par:"4/3",si:"17/11",tip:"Accurate pitch needed.",desc:"Test your nerve."},
+3:{name:"Marker Pole",imgs:["images/hole3.webp","images/hole3-3.webp"],w:443,y:433,r:421,par:"4/5",si:1,tip:"Blind tee shot.",desc:"Watch the ditch."},
+4:{name:"The Stamp",imgs:["images/hole4.webp","images/hole4-4.webp"],w:143,y:131,r:119,par:3,si:13,tip:"Club selection key.",desc:"Short but dangerous."},
+5:{name:"The Plateau",imgs:["images/hole5.webp","images/hole5-5.webp"],w:425,y:415,r:334,par:4,si:"3/17",tip:"Steady shot.",desc:"Amen Corner start."},
+6:{name:"Hells Corner",imgs:["images/hole6.webp","images/hole6-6.webp"],w:182,y:174,r:159,par:3,si:"7/9",tip:"Long par 3.",desc:"Tough green."},
+7:{name:"The Bank",imgs:["images/hole7.webp","images/hole7-7.webp"],w:199,y:180,r:150,par:3,si:"5/7",tip:"Very tight.",desc:"Amen Corner end."},
+8:{name:"The Summit",imgs:["images/hole8.webp","images/hole8-8.webp"],w:298,y:291,r:272,par:4,si:"15/5",tip:"Great views.",desc:"Highest point."},
+9:{name:"Devils Horns",imgs:["images/hole9.webp","images/hole9-9.webp"],w:388,y:382,r:314,par:4,si:"11/15",tip:"Use slopes.",desc:"Tight fairway."},
+10:{name:"The Dell",imgs:["images/hole10.webp","images/hole10-10.webp"],w:322,y:310,r:251,par:4,si:"16/14",tip:"Straightforward.",desc:"Accuracy wins."},
+11:{name:"The Trap",imgs:["images/hole11.webp","images/hole11-11.webp"],w:173,y:163,r:105,par:3,si:"10/18",tip:"Avoid bunkers.",desc:"Stay central."},
+12:{name:"Calm",imgs:["images/hole12.webp","images/hole12-12.webp"],w:269,y:264,r:258,par:4,si:"18/16",tip:"Go for green.",desc:"Birdie chance."},
+13:{name:"Blind Ascent",imgs:["images/hole13.webp","images/hole13-13.webp"],w:523,y:452,r:442,par:5,si:"6/8",tip:"Dogleg left.",desc:"Long hole."},
+14:{name:"The Snap",imgs:["images/hole14.webp","images/hole14-14.webp"],w:174,y:168,r:154,par:3,si:"14/12",tip:"Accurate tee shot.",desc:"Downhill par 3."},
+15:{name:"The Climb",imgs:["images/hole15.webp","images/hole15-15.webp"],w:304,y:298,r:294,par:4,si:"8/2",tip:"Plays long.",desc:"Uphill test."},
+16:{name:"High Pressure",imgs:["images/hole16.webp","images/hole16-16.webp"],w:436,y:430,r:419,par:"4/5",si:"2/4",tip:"Very tough.",desc:"Power hole."},
+17:{name:"The Firs",imgs:["images/hole17.webp","images/hole17-17.webp"],w:416,y:406,r:392,par:"4/5",si:"4/10",tip:"4 great shots needed.",desc:"Demanding."},
+18:{name:"The Finale",imgs:["images/hole18.webp","images/hole18-18.webp"],w:318,y:308,r:298,par:4,si:"12/6",tip:"Dogleg right.",desc:"Finish strong."}
+};
 
-        const membershipData = [
-            { name: "Full Member", price: "£1,150", desc: "Unlimited golf 7 days a week, full competition entry and voting rights." },
-            { name: "7 Day Restricted", price: "£860", desc: "For those wanting weekend and weekday play flexibility." },
-            { name: "Junior Member", price: "£50", desc: "Under 18s. Supporting the future generations." }
-        ];
-		
-		function updateCourseStatus(){
-    const now = new Date();
+// CLOCK
+function updateCourseStatus(){
+    const now=new Date();
+    const current=now.getHours()*60+now.getMinutes();
+    const el=document.getElementById('course-status');
 
-    const hours = now.getHours();
-    const mins = now.getMinutes();
-    const current = hours*60 + mins;
-
-    const openTime = 8 * 60;        // 08:00
-    const closeTime = 17 * 60 + 52; // 17:52
-
-    const el = document.getElementById('course-status');
-
-    if(current >= openTime && current <= closeTime){
-        el.innerText = "Open";
-        el.className = "text-green-400 font-bold uppercase";
-    } else {
-        el.innerText = "Closed";
-        el.className = "text-red-500 font-bold uppercase";
+    if(current>=480 && current<=1072){
+        el.innerText="Open";
+        el.className="text-green-400 font-bold uppercase";
+    }else{
+        el.innerText="Closed";
+        el.className="text-red-500 font-bold uppercase";
     }
 }
 
-        function updateClock(){
+function updateClock(){
     const now=new Date();
 
-    document.getElementById('live-clock').innerText =
+    document.getElementById('live-clock').innerText=
     now.toLocaleString('en-GB',{
         weekday:'short',
         day:'numeric',
@@ -693,128 +514,119 @@ button:active, a:active { transform: scale(0.97); }
     });
 
     document.getElementById('year').innerText=now.getFullYear();
-
-    updateCourseStatus(); // 👈 ADD THIS
+    updateCourseStatus();
 }
 
-       let imgIndex = 0;
+// SLIDER
+let imgIndex=0;
 let imgInterval;
 
-function setHole(n) {
-    const h = courseData[n];
-    const img = document.getElementById('h-img');
+function setHole(n){
+    const h=courseData[n];
+    const img=document.getElementById('h-img');
 
-    document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
-    document.getElementById('h-name').innerText = h.name;
-    document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
-    document.getElementById('h-white').innerText = h.w;
-    document.getElementById('h-yellow').innerText = h.y;
-    document.getElementById('h-red').innerText = h.r;
-    document.getElementById('h-desc').innerText = h.desc;
-    document.getElementById('h-tip').innerText = h.tip;
+    document.getElementById('h-num').innerText=n.toString().padStart(2,'0');
+    document.getElementById('h-name').innerText=h.name;
+    document.getElementById('h-par-si').innerText=`P${h.par} / S${h.si}`;
+    document.getElementById('h-white').innerText=h.w;
+    document.getElementById('h-yellow').innerText=h.y;
+    document.getElementById('h-red').innerText=h.r;
+    document.getElementById('h-desc').innerText=h.desc;
+    document.getElementById('h-tip').innerText=h.tip;
 
     clearInterval(imgInterval);
+    imgIndex=0;
 
-    imgIndex = 0;
+    function showImage(){
+        img.style.opacity=0;
 
-    function showImage() {
-        img.style.opacity = 0;
-
-        setTimeout(() => {
-            img.src = h.imgs[imgIndex];
-            img.style.opacity = 1;
-
-            imgIndex = (imgIndex + 1) % h.imgs.length;
-        }, 200);
+        setTimeout(()=>{
+            img.src=h.imgs[imgIndex];
+            img.style.opacity=1;
+            imgIndex=(imgIndex+1)%h.imgs.length;
+        },200);
     }
 
     showImage();
-    imgInterval = setInterval(showImage, 3000);
+    imgInterval=setInterval(showImage,3000);
 
-    document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.hole-card').forEach(c=>c.classList.remove('active'));
     document.getElementById(`h-${n}`).classList.add('active');
 }
 
-        function toggleScorecard() {
-            const modal = document.getElementById('scorecard-modal');
-            modal.classList.toggle('hidden');
-            modal.classList.toggle('flex');
-            const body = document.getElementById('scorecard-body');
-            if (body.innerHTML === "") {
-                Object.keys(courseData).forEach(i => {
-                    const h = courseData[i];
-                    body.innerHTML += `<tr class="border-b border-gray-100 hover:bg-white transition"><td class="p-3 font-bold bg-gray-50">${i}</td><td class="p-3 text-left italic">${h.name}</td><td class="p-3">${h.w}</td><td class="p-3 text-yellow-600 font-bold">${h.y}</td><td class="p-3 text-red-600 font-bold">${h.r}</td><td class="p-3">${h.par}</td><td class="p-3 font-black">${h.si}</td></tr>`;
-                });
-            }
-        }
+// SCORECARD
+function toggleScorecard(){
+    const modal=document.getElementById('scorecard-modal');
+    modal.classList.toggle('hidden');
+    modal.classList.toggle('flex');
 
-        const navCont = document.getElementById('hole-nav-container');
+    const body=document.getElementById('scorecard-body');
 
-for (let i = 1; i <= 18; i++) {
-    const div = document.createElement('div');
-    div.id = `h-${i}`;
-    div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer transition-all";
+    if(body.innerHTML===""){
+        Object.keys(courseData).forEach(i=>{
+            const h=courseData[i];
+            body.innerHTML+=`
+            <tr class="border-b">
+                <td>${i}</td>
+                <td>${h.name}</td>
+                <td>${h.w}</td>
+                <td>${h.y}</td>
+                <td>${h.r}</td>
+                <td>${h.par}</td>
+                <td>${h.si}</td>
+            </tr>`;
+        });
+    }
+}
 
-    div.innerHTML = `
-        <div class="flex flex-col">
-            <span class="text-[10px] uppercase tracking-widest text-gray-400">Hole ${i}</span>
-          <span class="serif text-sm md:text-lg font-semibold text-[#132419]"> ${courseData[i].name}</span>
-        </div>
-    `;
+// NAV
+const navCont=document.getElementById('hole-nav-container');
 
-    div.onclick = () => setHole(i);
+for(let i=1;i<=18;i++){
+    const div=document.createElement('div');
+    div.id=`h-${i}`;
+    div.className="hole-card p-4 cursor-pointer";
+    div.innerHTML=`Hole ${i} - ${courseData[i].name}`;
+    div.onclick=()=>setHole(i);
     navCont.appendChild(div);
 }
 
-        const mGrid = document.getElementById('membership-grid');
-        membershipData.forEach(m => {
-            mGrid.innerHTML += `<div class="p-10 border border-white/10 bg-white/5 shadow-2xl flex flex-col items-center text-center"><h4 class="serif text-3xl mb-4 italic text-[#C5A367] font-bold">${m.name}</h4><p class="text-4xl font-light mb-6 font-bold">${m.price}</p><p class="text-sm text-gray-400 leading-relaxed mb-8 italic">${m.desc}</p><a href="tel:01384254020" class="text-[10px] uppercase tracking-widest border border-[#C5A367] px-6 py-2 hover:bg-[#C5A367] transition">Inquire</a></div>`;
-        });
+// MENU
+const menuBtn=document.getElementById('menu-btn');
+const navLinks=document.getElementById('nav-links');
 
-        // FIXED MOBILE MENU LOGIC
-        const menuBtn = document.getElementById('menu-btn');
-        const navLinks = document.getElementById('nav-links');
+function closeMenu(){
+    navLinks.classList.add('translate-x-full');
+    document.body.style.overflow='auto';
+}
+function openMenu(){
+    navLinks.classList.remove('translate-x-full');
+    document.body.style.overflow='hidden';
+}
 
-        function closeMenu() {
-            navLinks.classList.add('translate-x-full');
-            navLinks.classList.add('pointer-events-none');
-            document.body.style.overflow = 'auto';
-        }
+menuBtn.onclick=(e)=>{
+    e.stopPropagation();
+    navLinks.classList.contains('translate-x-full')?openMenu():closeMenu();
+};
 
-        function openMenu() {
-            navLinks.classList.remove('translate-x-full');
-            navLinks.classList.remove('pointer-events-none');
-            document.body.style.overflow = 'hidden';
-        }
+document.querySelectorAll('#nav-links a').forEach(link=>{
+    link.addEventListener('click',()=>{
+        if(window.innerWidth<768) closeMenu();
+    });
+});
 
-        menuBtn.onclick = (e) => {
-            e.stopPropagation();
-            const isClosed = navLinks.classList.contains('translate-x-full');
-            if (isClosed) openMenu(); else closeMenu();
-        };
-
-        // Close menu when clicking a link
-        document.querySelectorAll('#nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) closeMenu();
-            });
-        });
-
-        // Close menu when clicking outside (on the body)
-        document.addEventListener('click', (e) => {
-    if (
-        window.innerWidth < 768 &&
-        !navLinks.classList.contains('translate-x-full') &&
-        !navLinks.contains(e.target) &&
-        !menuBtn.contains(e.target) // ✅ FIX
-    ) {
+document.addEventListener('click',(e)=>{
+    if(window.innerWidth<768 &&
+       !navLinks.contains(e.target) &&
+       !menuBtn.contains(e.target)){
         closeMenu();
     }
 });
 
-        updateClock();
-        setInterval(updateClock, 1000);
-        setHole(1);
-    </script>
+// INIT
+updateClock();
+setInterval(updateClock,1000);
+setHole(1);
+</script>   
 </body>
 </html>
