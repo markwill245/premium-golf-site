@@ -11,6 +11,9 @@
 
 body { 
     font-family: 'Outfit', sans-serif; 
+	.serif {
+    font-family: 'Cormorant Garamond', serif;
+}
     background-color: var(--cream); 
     color: var(--forest); 
     scroll-behavior: smooth;
@@ -274,7 +277,7 @@ button:active, a:active { transform: scale(0.97); }
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
-                    <img src="clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
+                    <img src="images/clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
                         <h3 class="serif text-4xl text-white mb-2">The Clubhouse</h3>
                         <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">Experience panoramic views across the course from our recently refurbished first-floor lounge.</p>
@@ -343,10 +346,16 @@ button:active, a:active { transform: scale(0.97); }
                 <div id="hole-nav-container" class="flex md:flex-col overflow-x-auto md:overflow-y-auto custom-scrollbar gap-2 pb-4 md:h-[600px]"></div>
             </div>
             <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
-                <div class="h-64 md:h-[400px] bg-gray-200">
-                    <img id="h-img" src="" class="w-full h-full object-cover transition-opacity duration-500 opacity-100">
-                </div>
-                <div class="p-8 md:p-12">
+                <div class="h-64 md:h-[400px] bg-black relative overflow-hidden">
+
+    <img id="h-img"
+         src=""
+         class="absolute inset-0 w-full h-full object-cover opacity-80 transition-opacity duration-500">
+
+    <div class="absolute inset-0 bg-gradient-to-t from-[#132419] via-[#132419]/60 to-transparent"></div>
+
+</div>
+               <div class="p-8 md:p-12 bg-[#132419]">
                     <div class="flex justify-between items-start mb-8 border-b border-white/10 pb-6">
                         <div>
                             <span id="h-num" class="serif text-6xl text-[#C5A367] italic"></span>
@@ -455,7 +464,7 @@ button:active, a:active { transform: scale(0.97); }
                 <h3 class="serif text-3xl italic">Course Scorecard</h3>
                 <button onclick="toggleScorecard()" class="text-4xl text-gray-400 hover:text-black">×</button>
             </div>
-            <table class="w-full text-center border-collapse">
+            <table class="w-full text-center border-collapse overflow-hidden rounded-lg shadow-xl">
                 <thead class="bg-[#132419] text-white text-[10px] uppercase font-bold">
                     <tr><th class="p-3">Hole</th><th class="p-3">Name</th><th class="p-3">White</th><th class="p-3">Yellow</th><th class="p-3">Red</th><th class="p-3">Par</th><th class="p-3">SI</th></tr>
                 </thead>
@@ -485,6 +494,23 @@ const courseData = {
 17:{name:"The Firs",imgs:["images/hole17.webp","images/hole17-17.webp"],w:416,y:406,r:392,par:"4/5",si:"4/10",tip:"4 great shots needed.",desc:"Demanding."},
 18:{name:"The Finale",imgs:["images/hole18.webp","images/hole18-18.webp"],w:318,y:308,r:298,par:4,si:"12/6",tip:"Dogleg right.",desc:"Finish strong."}
 };
+const membershipData = [
+    { 
+        name: "Full Member", 
+        price: "£1,150", 
+        desc: "Unlimited golf 7 days a week, full competition entry and voting rights." 
+    },
+    { 
+        name: "7 Day Restricted", 
+        price: "£860", 
+        desc: "Weekday and weekend access with some restrictions." 
+    },
+    { 
+        name: "Junior Member", 
+        price: "£50", 
+        desc: "Under 18s. Supporting the next generation of golfers." 
+    }
+];
 
 // CLOCK
 function updateCourseStatus(){
@@ -562,19 +588,16 @@ function toggleScorecard(){
 
     const body=document.getElementById('scorecard-body');
 
-    if(body.innerHTML===""){
-        Object.keys(courseData).forEach(i=>{
-            const h=courseData[i];
-            body.innerHTML+=`
-            <tr class="border-b">
-                <td>${i}</td>
-                <td>${h.name}</td>
-                <td>${h.w}</td>
-                <td>${h.y}</td>
-                <td>${h.r}</td>
-                <td>${h.par}</td>
-                <td>${h.si}</td>
-            </tr>`;
+   body.innerHTML += `
+<tr class="border-b border-gray-200 hover:bg-[#C5A367]/10 transition-all duration-200">
+    <td class="p-3 font-bold text-[#C5A367]">${i}</td>
+    <td class="p-3 italic">${h.name}</td>
+    <td class="p-3">${h.w}</td>
+    <td class="p-3 text-yellow-600 font-bold">${h.y}</td>
+    <td class="p-3 text-red-500 font-bold">${h.r}</td>
+    <td class="p-3 font-semibold">${h.par}</td>
+    <td class="p-3 font-black">${h.si}</td>
+</tr>`;
         });
     }
 }
@@ -590,6 +613,32 @@ for(let i=1;i<=18;i++){
     div.onclick=()=>setHole(i);
     navCont.appendChild(div);
 }
+const mGrid = document.getElementById('membership-grid');
+
+membershipData.forEach(m => {
+    mGrid.innerHTML += `
+        <div class="bg-[#0f1f16] border border-[#C5A367]/20 p-10 shadow-xl hover:scale-[1.02] transition-all duration-300 text-center">
+            
+            <h4 class="serif text-3xl text-[#C5A367] mb-4 italic">
+                ${m.name}
+            </h4>
+
+            <p class="text-5xl font-light text-white mb-6 tracking-tight">
+                ${m.price}
+            </p>
+
+            <p class="text-sm text-white/70 leading-relaxed italic mb-8">
+                ${m.desc}
+            </p>
+
+            <a href="tel:01384254020" 
+               class="inline-block border border-[#C5A367] text-[#C5A367] px-6 py-2 text-[10px] uppercase tracking-widest hover:bg-[#C5A367] hover:text-[#132419] transition">
+               Enquire
+            </a>
+
+        </div>
+    `;
+});
 
 // MENU
 const menuBtn=document.getElementById('menu-btn');
