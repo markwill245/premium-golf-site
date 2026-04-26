@@ -581,26 +581,33 @@ function setHole(n){
 }
 
 // SCORECARD
-function toggleScorecard(){
-    const modal=document.getElementById('scorecard-modal');
+
+ function toggleScorecard(){
+    const modal = document.getElementById('scorecard-modal');
     modal.classList.toggle('hidden');
     modal.classList.toggle('flex');
 
-    const body=document.getElementById('scorecard-body');
+    const body = document.getElementById('scorecard-body');
 
-   body.innerHTML += `
-<tr class="border-b border-gray-200 hover:bg-[#C5A367]/10 transition-all duration-200">
-    <td class="p-3 font-bold text-[#C5A367]">${i}</td>
-    <td class="p-3 italic">${h.name}</td>
-    <td class="p-3">${h.w}</td>
-    <td class="p-3 text-yellow-600 font-bold">${h.y}</td>
-    <td class="p-3 text-red-500 font-bold">${h.r}</td>
-    <td class="p-3 font-semibold">${h.par}</td>
-    <td class="p-3 font-black">${h.si}</td>
-</tr>`;
-        });
+    // CLEAR FIRST (important)
+    body.innerHTML = '';
+
+    // LOOP ALL 18 HOLES
+    for(let i = 1; i <= 18; i++){
+        const h = courseData[i];
+
+        body.innerHTML += `
+        <tr class="border-b border-gray-200 hover:bg-[#C5A367]/10 transition-all duration-200">
+            <td class="p-3 font-bold text-[#C5A367]">${i}</td>
+            <td class="p-3 italic">${h.name}</td>
+            <td class="p-3">${h.w}</td>
+            <td class="p-3 text-yellow-600 font-bold">${h.y}</td>
+            <td class="p-3 text-red-500 font-bold">${h.r}</td>
+            <td class="p-3 font-semibold">${h.par}</td>
+            <td class="p-3 font-black">${h.si}</td>
+        </tr>`;
     }
-}
+} 
 
 // NAV
 const navCont=document.getElementById('hole-nav-container');
