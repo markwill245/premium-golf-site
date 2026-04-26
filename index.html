@@ -189,7 +189,7 @@ button:active, a:active { transform: scale(0.97); }
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
 
-       <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-all ease-[cubic-bezier(0.77,0,0.18,1)] duration-500 pointer-events-none md:static md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold px-8"
+      <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-all ease-[cubic-bezier(0.77,0,0.18,1)] duration-500 pointer-events-none md:static md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold px-8">
     <a href="#hospitality" class="hover:text-[#C5A367] transition">Hospitality</a> 
     <a href="#" class="hover:text-[#C5A367] transition">Home</a>
     <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
@@ -540,7 +540,13 @@ button:active, a:active { transform: scale(0.97); }
             document.getElementById('h-red').innerText = h.r;
             document.getElementById('h-desc').innerText = h.desc;
             document.getElementById('h-tip').innerText = h.tip;
-            document.getElementById('h-img').src = h.img;
+            const img = document.getElementById('h-img');
+img.style.opacity = 0;
+
+setTimeout(() => {
+    img.src = h.img;
+    img.style.opacity = 1;
+}, 200);
             document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
             document.getElementById(`h-${n}`).classList.add('active');
         }
@@ -568,7 +574,7 @@ for (let i = 1; i <= 18; i++) {
     div.innerHTML = `
         <div class="flex flex-col">
             <span class="text-[10px] uppercase tracking-widest text-gray-400">Hole ${i}</span>
-            <span class="serif text-base font-semibold">${courseData[i].name}</span>
+          <span class="serif text-sm md:text-lg font-semibold text-[#132419]"> ${courseData[i].name}</span>
         </div>
     `;
 
