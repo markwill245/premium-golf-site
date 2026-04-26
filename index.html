@@ -604,7 +604,7 @@ button:active, a:active { transform: scale(0.97); }
 		   
            14: { name: "The Snap",
 		   imgs: "images/hole14.webp",
-		   ings:"images/hole14-14",
+		   imgs:"images/hole14-14.webp",
 		   
 		   },
 		   w: 174, y: 168, r: 154,
@@ -697,11 +697,12 @@ button:active, a:active { transform: scale(0.97); }
     updateCourseStatus(); // 👈 ADD THIS
 }
 
-        let imgIndex = 0;
+       let imgIndex = 0;
 let imgInterval;
 
 function setHole(n) {
     const h = courseData[n];
+    const img = document.getElementById('h-img');
 
     document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
     document.getElementById('h-name').innerText = h.name;
@@ -712,9 +713,6 @@ function setHole(n) {
     document.getElementById('h-desc').innerText = h.desc;
     document.getElementById('h-tip').innerText = h.tip;
 
-    const img = document.getElementById('h-img');
-
-    // stop previous slideshow
     clearInterval(imgInterval);
 
     imgIndex = 0;
@@ -731,7 +729,7 @@ function setHole(n) {
     }
 
     showImage();
-    imgInterval = setInterval(showImage, 3000); // change every 3 sec
+    imgInterval = setInterval(showImage, 3000);
 
     document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
     document.getElementById(`h-${n}`).classList.add('active');
