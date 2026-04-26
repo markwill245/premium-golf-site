@@ -22,7 +22,10 @@ body {
     backdrop-filter: blur(12px); 
     background: #132419 !important; 
 }
-
+/* FORCE SOLID MOBILE MENU BACKGROUND */
+#nav-links {
+    background: #132419 !important;
+}
 /* MOBILE SPACING */
 @media (max-width: 768px) {
     section {
@@ -186,7 +189,7 @@ button:active, a:active { transform: scale(0.97); }
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
 
-       <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-all ease-[cubic-bezier(0.77,0,0.18,1)] duration-500 pointer-events-none md:static md:inset-auto md:bg-transparent md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold bg-[#132419] bg-opacity-100 px-8">
+       <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 translate-x-full transition-all ease-[cubic-bezier(0.77,0,0.18,1)] duration-500 pointer-events-none md:static md:flex-row md:translate-x-0 md:pointer-events-auto text-[12px] uppercase tracking-[0.4em] font-semibold px-8"
     <a href="#hospitality" class="hover:text-[#C5A367] transition">Hospitality</a> 
     <a href="#" class="hover:text-[#C5A367] transition">Home</a>
     <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
@@ -556,19 +559,22 @@ button:active, a:active { transform: scale(0.97); }
         }
 
         const navCont = document.getElementById('hole-nav-container');
-        for (let i = 1; i <= 18; i++) {
-            const div = document.createElement('div');
-            div.id = `h-${i}`;
-            div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer transition-all hover:bg-[#132419] hover:text-white";
-           div.innerHTML = `
-    <div class="flex flex-col">
-        <span class="text-[10px] uppercase tracking-widest text-gray-400">Hole ${i}</span>
-        <span class="serif text-base font-semibold">${courseData[i].name}</span>
-    </div>
-`;
-div.onclick = () => setHole(i);
-navCont.appendChild(div);
-        }
+
+for (let i = 1; i <= 18; i++) {
+    const div = document.createElement('div');
+    div.id = `h-${i}`;
+    div.className = "hole-card p-4 border border-gray-200/50 cursor-pointer transition-all";
+
+    div.innerHTML = `
+        <div class="flex flex-col">
+            <span class="text-[10px] uppercase tracking-widest text-gray-400">Hole ${i}</span>
+            <span class="serif text-base font-semibold">${courseData[i].name}</span>
+        </div>
+    `;
+
+    div.onclick = () => setHole(i);
+    navCont.appendChild(div);
+}
 
         const mGrid = document.getElementById('membership-grid');
         membershipData.forEach(m => {
