@@ -466,24 +466,191 @@ button:active, a:active { transform: scale(0.97); }
 
     <script>
         const courseData = {
-            1: { name: "The Dog-Leg", img: "images/hole1.webp", w: 483, y: 473, r: 464, par: 5, si: 9, tip: "A straight tee shot is required to a long left sweeping fairway.", desc: "A challenging start to the round requiring precision from the tee." },
-            2: { name: "Risk & Reward", img: "images/hole2.webp", w: 257, y: 251, r: 167, par: "4/3", si: "17/11", tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.", desc: "Test your nerve on this tactical short hole." },
-            3: { name: "Marker Pole", img: "images/hole3.webp", w: 443, y: 433, r: 421, par: "4/5", si: 1, tip: "A difficult blind straight tee shot.", desc: "Note the horizontal dry ditch across the fairway." },
-            4: { name: "The Stamp", img: "images/hole4.webp", w: 143, y: 131, r: 119, par: 3, si: 13, tip: "Our own postage stamp hole with a bunker across the front.", desc: "Short but dangerous. Club selection is everything." },
-            5: { name: "The Plateau", img: "images/hole5.webp", w: 425, y: 415, r: 334, par: 4, si: "3/17", tip: "Steady shot onto the top of a plateau fairway.", desc: "The first hole of our famous 'Amen Corner'." },
-            6: { name: "Hells Corner", img: "images/hole6.webp", w: 182, y: 174, r: 159, par: 3, si: "7/9", tip: "A long difficult hole to a right to left sloping green.", desc: "The second challenge of Amen Corner." },
-            7: { name: "The Bank", img: "images/hole7.webp", w: 199, y: 180, r: 150, par: 3, si: "5/7", tip: "Very little room for manoeuvre.", desc: "The finale of Amen Corner." },
-            8: { name: "The Summit", img: "images/hole8.webp", w: 298, y: 291, r: 272, par: 4, si: "15/5", tip: "Outstanding views across several counties.", desc: "The peak of the course with breathtaking panoramas." },
-            9: { name: "Devils Horns", img: "images/hole9.webp", w: 388, y: 382, r: 314, par: 4, si: "11/15", tip: "Everything falls right onto the green.", desc: "A tight fairway that tests your ability to play the slopes." },
-            10: { name: "The Dell", img: "images/hole10.webp", w: 322, y: 310, r: 251, par: 4, si: "16/14", tip: "A straight forward hole onto a slightly raised green.", desc: "Accuracy is rewarded on this scenic par 4." },
-            11: { name: "The Trap", img: "images/hole11.webp", w: 173, y: 163, r: 105, par: 3, si: "10/18", tip: "Bunkers either side to be aware of.", desc: "Stay centered to avoid the sand traps." },
-            12: { name: "Calm", img: "images/hole12.webp", w: 269, y: 264, r: 258, par: 4, si: "18/16", tip: "Possible to hit the green with a good tee shot.", desc: "A generous fairway offering a real birdie opportunity." },
-            13: { name: "Blind Ascent", img: "images/hole13.webp", w: 523, y: 452, r: 442, par: 5, si: "6/8", tip: "A late dogleg left after downhill shots.", desc: "A long journey home requiring strong ball striking." },
-            14: { name: "The Snap", img: "images/hole14.webp", w: 174, y: 168, r: 154, par: 3, si: "14/12", tip: "A slightly downhill green requires an accurate tee shot.", desc: "A beautiful drop shot par 3." },
-            15: { name: "The Climb", img: "images/hole15.webp", w: 304, y: 298, r: 294, par: 4, si: "8/2", tip: "Uphill ground makes it longer than you think.", desc: "Don't let the yardage fool you." },
-            16: { name: "High Pressure", img: "images/hole16.webp", w: 436, y: 430, r: 419, par: "4/5", si: "2/4", tip: "A very tough long hole with a ditch.", desc: "Tests your nerve and power." },
-            17: { name: "The Firs", img: "images/hole17.webp", w: 416, y: 406, r: 392, par: "4/5", si: "4/10", tip: "A par requires four very good shots.", desc: "A demanding hole as you approach the clubhouse." },
-            18: { name: "The Finale", img: "images/hole18.webp", w: 318, y: 308, r: 298, par: 4, si: "12/6", tip: "A slight dogleg right brings you home.", desc: "A finishing hole in front of the members." }
+           1: { 
+    name: "The Dog-Leg",
+    imgs: [
+        "images/hole1.webp",
+        "images/hole1-1.webp",
+       
+    ],
+    w: 483, y: 473, r: 464,
+    par: 5, si: 9,
+    tip: "A straight tee shot is required...",
+    desc: "A challenging start to the round requiring precision from the Tee."},
+},
+            2: {
+    name: "Risk & Reward",
+	imgs: "images/hole2.webp",
+	imgs: "images2-2.webp",
+	
+	},
+	w: 257, y: 251, r: 167,
+	par: "4/3",si: "17/11", 
+	tip: "A steady tee shot followed by an accurate pitch to a narrow raised green.",
+	desc: "Test your nerve on this tactical short hole." }, 
+	 
+           3: { 
+	name: "Marker Pole",
+	imgs: "images/hole3.webp",
+	imgs: "images/hole3-3.webp",
+	
+	},
+	w: 443, y: 433, r: 421,
+	par: "4/5", si: 1,
+	tip: "A difficult blind straight tee shot.",
+	desc: "Note the horizontal dry ditch across the fairway." },
+	
+		   
+           4: { name: "The Stamp",
+		   imgs: "images/hole4.webp",
+		   imgs: "images/hole4-4.webp",
+		   
+		   },
+		   w: 143, y: 131, r: 119,
+		   par: 3, si: 13,
+		   tip: "Our own postage stamp hole with a bunker across the front.",
+		   desc: "Short but dangerous. Club selection is everything." },
+		   
+           5: { name: "The Plateau",
+		   imgs: "images/hole5.webp",
+		   imgs: "images/hole5-5.webp",
+		   
+		   },
+		   w: 425, y: 415, r: 334,
+		   par: 4, si: "3/17", 
+		   tip: "Steady shot onto the top of a plateau fairway.",
+		   desc: "The first hole of our famous 'Amen Corner'." },
+		   
+           6: { name: "Hells Corner",
+		   imgs: "images/hole6.webp",
+		   imgs: "images/hole6-6.webp",
+		   
+		   },
+		   w: 182, y: 174, r: 159,
+		   par: 3, si: "7/9", 
+		   tip: "A long difficult hole to a right to left sloping green.", 
+		   desc: "The second challenge of Amen Corner." },
+		   
+           7: { name: "The Bank", 
+		   imgs: "images/hole7.webp",
+		   imgs: "images/hole7-7.webp",
+		   
+		   },
+		   w: 199, y: 180, r: 150,
+		   par: 3, si: "5/7",
+		   tip: "Very little room for manoeuvre.",
+		   desc: "The finale of Amen Corner." },
+		   
+           8: { name: "The Summit",
+		   imgs: "images/hole8.webp",
+		   imgs: "images/hole8-8.webp",
+		   
+		   },
+		   w: 298, y: 291, r: 272,
+		   par: 4, si: "15/5",
+		   tip: "Outstanding views across several counties.",
+		   desc: "The peak of the course with breathtaking panoramas." },
+		   
+           9: { name: "Devils Horns",
+		   imgs: "images/hole9.webp",
+           imgs: "images/hole9-9.webp",
+		   
+		   },
+		   w: 388, y: 382, r: 314,
+		   par: 4, si: "11/15",
+		   tip: "Everything falls right onto the green.", 
+		   desc: "A tight fairway that tests your ability to play the slopes." },
+		   
+		   
+           10: { name: "The Dell",
+		   imgs: "images/hole10.webp",
+		   imgs:"images/hole10-10.webp",
+		   
+		   },
+		   w: 322, y: 310, r: 251,
+		   par: 4, si: "16/14",
+		   tip: "A straight forward hole onto a slightly raised green.", 
+		   desc: "Accuracy is rewarded on this scenic par 4." },
+		   
+           11: { name: "The Trap", 
+		   imgs: "images/hole11.webp", 
+		   imgs:"images/hole11-11.webp",
+		   
+		   },
+		   w: 173, y: 163, r: 105,
+		   par: 3, si: "10/18",
+		   tip: "Bunkers either side to be aware of.",
+		   desc: "Stay centered to avoid the sand traps." },
+		   
+           12: { name: "Calm",
+		   imgs: "images/hole12.webp",
+		   imgs:"images/hole12-12.webp",
+		   
+		   },
+		   w: 269, y: 264, r: 258,
+		   par: 4, si: "18/16",
+		   tip: "Possible to hit the green with a good tee shot.",
+		   desc: "A generous fairway offering a real birdie opportunity." },
+		   
+           13: { name: "Blind Ascent",
+		   imgs: "images/hole13.webp",
+		   imgs: "images/hole13-13.webp",
+		   
+		   },
+		   w: 523, y: 452, r: 442,
+		   par: 5, si: "6/8",
+		   tip: "A late dogleg left after downhill shots.",
+		   desc: "A long journey home requiring strong ball striking." },
+		   
+           14: { name: "The Snap",
+		   imgs: "images/hole14.webp",
+		   ings:"images/hole14-14",
+		   
+		   },
+		   w: 174, y: 168, r: 154,
+		   par: 3, si: "14/12",
+		   tip: "A slightly downhill green requires an accurate tee shot.",
+		   desc: "A beautiful drop shot par 3." },
+		   
+           15: { name: "The Climb",
+		   imgs: "images/hole15.webp",
+		   imgs:"images/hole15-15.webp",
+		   
+		   },
+		   w: 304, y: 298, r: 294,
+		   par: 4, si: "8/2", 
+		   tip: "Uphill ground makes it longer than you think.", 
+		   desc: "Don't let the yardage fool you." },
+		   
+           16: { name: "High Pressure",
+		   imgs: "images/hole16.webp",
+		   imgs: "images/hole16-16.webp",
+		   
+		   },
+		   w: 436, y: 430, r: 419, 
+		   par: "4/5", si: "2/4",
+		   tip: "A very tough long hole with a ditch.",
+		   desc: "Tests your nerve and power." },
+		   
+           17: { name: "The Firs", 
+		   imgs: "images/hole17.webp",
+		   imgs:"images/hole17-17.webp",
+		   
+		   },
+		   w: 416, y: 406, r: 392,
+		   par: "4/5", si: "4/10", 
+		   tip: "A par requires four very good shots.",
+		   desc: "A demanding hole as you approach the clubhouse." },
+		   
+           18: { name: "The Finale", 
+		   imgs: "images/hole18.webp",
+		   imgs:"images/hole18-18.webp",
+		   
+		   },
+		   w: 318, y: 308, r: 298, 
+		   par: 4, si: "12/6", 
+		   tip: "A slight dogleg right brings you home.",
+		   desc: "A finishing hole in front of the members." }
         };
 
         const membershipData = [
@@ -530,26 +697,45 @@ button:active, a:active { transform: scale(0.97); }
     updateCourseStatus(); // 👈 ADD THIS
 }
 
-        function setHole(n) {
-            const h = courseData[n];
-            document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
-            document.getElementById('h-name').innerText = h.name;
-            document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
-            document.getElementById('h-white').innerText = h.w;
-            document.getElementById('h-yellow').innerText = h.y;
-            document.getElementById('h-red').innerText = h.r;
-            document.getElementById('h-desc').innerText = h.desc;
-            document.getElementById('h-tip').innerText = h.tip;
-            const img = document.getElementById('h-img');
-img.style.opacity = 0;
+        let imgIndex = 0;
+let imgInterval;
 
-setTimeout(() => {
-    img.src = h.img;
-    img.style.opacity = 1;
-}, 200);
-            document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
-            document.getElementById(`h-${n}`).classList.add('active');
-        }
+function setHole(n) {
+    const h = courseData[n];
+
+    document.getElementById('h-num').innerText = n.toString().padStart(2, '0');
+    document.getElementById('h-name').innerText = h.name;
+    document.getElementById('h-par-si').innerText = `P${h.par} / S${h.si}`;
+    document.getElementById('h-white').innerText = h.w;
+    document.getElementById('h-yellow').innerText = h.y;
+    document.getElementById('h-red').innerText = h.r;
+    document.getElementById('h-desc').innerText = h.desc;
+    document.getElementById('h-tip').innerText = h.tip;
+
+    const img = document.getElementById('h-img');
+
+    // stop previous slideshow
+    clearInterval(imgInterval);
+
+    imgIndex = 0;
+
+    function showImage() {
+        img.style.opacity = 0;
+
+        setTimeout(() => {
+            img.src = h.imgs[imgIndex];
+            img.style.opacity = 1;
+
+            imgIndex = (imgIndex + 1) % h.imgs.length;
+        }, 200);
+    }
+
+    showImage();
+    imgInterval = setInterval(showImage, 3000); // change every 3 sec
+
+    document.querySelectorAll('.hole-card').forEach(c => c.classList.remove('active'));
+    document.getElementById(`h-${n}`).classList.add('active');
+}
 
         function toggleScorecard() {
             const modal = document.getElementById('scorecard-modal');
