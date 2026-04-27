@@ -25,29 +25,10 @@ body {
 .nav-blur { 
     backdrop-filter: blur(12px); 
     background: #132419 !important; 
-	
-/* ✅ CLEAN MOBILE MENU */
-@media (max-width: 768px) {
-    #nav-links {
-        position: fixed;
-        inset: 0;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-
-        background: #132419;
-
-        transform: translateX(100%);
-        transition: transform 0.5s ease;
-    }
-
-    #nav-links.translate-x-0 {
-        transform: translateX(0);
-    }
 }
+	
+
+   
 
   
     
@@ -212,7 +193,7 @@ button:active, a:active { transform: scale(0.97); }
         </button>
 
      <div id="nav-links"
-class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 bg-[#132419] translate-x-full transition-transform duration-500 md:static md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8">
+class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 bg-[#132419] translate-x-full transition-transform duration-500 md:static md:flex md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8">
 
     <a href="#" class="hover:text-[#C5A367] transition">Home</a>
     <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
