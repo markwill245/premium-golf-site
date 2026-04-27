@@ -25,11 +25,40 @@ body {
 .nav-blur { 
     backdrop-filter: blur(12px); 
     background: #132419 !important; 
-}
-/* FORCE SOLID MOBILE MENU BACKGROUND */
+/* 🔥 CLEAN MOBILE MENU FIX */
 #nav-links {
     background: #132419 !important;
 }
+
+@media (max-width: 768px) {
+    #nav-links {
+        position: fixed;
+        inset: 0;
+        background: #132419 !important;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+    }
+
+    #nav-links.translate-x-0 {
+        transform: translateX(0);
+    }
+}
+
+/* menu text */
+#nav-links a {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+}
+
+
 /* MOBILE SPACING */
 @media (max-width: 768px) {
     section {
@@ -47,16 +76,9 @@ body {
     }
 }
 
-/* MOBILE MENU FIX */
-#nav-links {
-    backdrop-filter: none;
-}
 
-@media (max-width: 768px) {
-    #nav-links {
-        background: #132419;
-    }
-}
+
+
 
 /* HOLE CARDS */
 .hole-card {
