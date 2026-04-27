@@ -363,12 +363,14 @@ to-transparent">
             </div>
             <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
                 <div class="h-64 md:h-[400px] bg-black relative overflow-hidden">
-
-    <img id="h-img"
-     class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
-
-  <div class="absolute inset-0 bg-gradient-to-t from-[#132419] via-[#132419]/30 to-transparent"></div> 
-
+				<img id="h-img"
+class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+src=""
+alt="Hole Image">
+<div class="absolute inset-0 bg-gradient-to-t 
+from-[#132419]/90 
+via-[#132419]/50 
+to-transparent">
 </div>
                <div class="p-8 md:p-12 bg-[#132419]">
                     <div class="flex justify-between items-start mb-8 border-b border-white/10 pb-6">
@@ -579,14 +581,14 @@ function setHole(n){
     imgIndex=0;
 
     function showImage(){
-        img.style.opacity=0.2;
+    img.style.opacity = 0;
 
-        setTimeout(()=>{
-            img.src=h.imgs[imgIndex];
-            img.style.opacity=1;
-            imgIndex=(imgIndex+1)%h.imgs.length;
-        },200);
-    }
+    setTimeout(() => {
+        img.src = h.imgs[imgIndex];
+        img.style.opacity = 1;
+        imgIndex = (imgIndex + 1) % h.imgs.length;
+    }, 200);
+}
 
     showImage();
     imgInterval=setInterval(showImage,3000);
