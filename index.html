@@ -41,18 +41,14 @@ body {
 
 /* MOBILE SPACING */
 @media (max-width: 768px) {
-    section {
-        padding-top: 5rem !important;
-        padding-bottom: 5rem !important;
-    }
-    h1 { font-size: 2.8rem !important; line-height: 1.1; }
-    h2 { font-size: 2.2rem !important; }
-    h3 { font-size: 1.6rem !important; }
-    p { font-size: 0.95rem; line-height: 1.6; }
-
-    #hole-nav-container {
-        gap: 10px;
-        padding-bottom: 10px;
+    #course .bg-gradient-to-t {
+        background: linear-gradient(
+            to top,
+            rgba(19,36,25,0.98),
+            rgba(19,36,25,0.85),
+            rgba(19,36,25,0.5),
+            rgba(19,36,25,0)
+        ) !important;
     }
 }
 
@@ -292,7 +288,13 @@ class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
                     <img src="images/clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
+                   <div class="absolute inset-0 
+bg-gradient-to-t 
+from-[#132419]/95 
+via-[#132419]/80 
+via-[#132419]/50 
+to-transparent">
+</div>
                         <h3 class="serif text-4xl text-white mb-2">The Clubhouse</h3>
                         <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">Experience panoramic views across the course from our recently refurbished first-floor lounge.</p>
                         <a href="clubhouse.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Explore the Lounge</a>
