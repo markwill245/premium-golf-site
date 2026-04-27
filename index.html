@@ -22,38 +22,41 @@ body {
 }
 
 /* HEADER */
-.nav-blur {
-    background: rgba(19, 36, 25, 0.92);
-    backdrop-filter: blur(8px);
+.nav-blur { 
+    backdrop-filter: blur(12px); 
+    background: #132419 !important; 
 }
-   
-.nav-blur {
-    background: rgba(19, 36, 25, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+/* FORCE SOLID MOBILE MENU BACKGROUND */
+#nav-links {
+    background: #132419 !important;
 }
-  
-    
-
-
-
-
 /* MOBILE SPACING */
 @media (max-width: 768px) {
-    #course .bg-gradient-to-t {
-        background: linear-gradient(
-            to top,
-            rgba(19,36,25,0.98),
-            rgba(19,36,25,0.85),
-            rgba(19,36,25,0.5),
-            rgba(19,36,25,0)
-        ) !important;
+    section {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+    }
+    h1 { font-size: 2.8rem !important; line-height: 1.1; }
+    h2 { font-size: 2.2rem !important; }
+    h3 { font-size: 1.6rem !important; }
+    p { font-size: 0.95rem; line-height: 1.6; }
+
+    #hole-nav-container {
+        gap: 10px;
+        padding-bottom: 10px;
     }
 }
 
+/* MOBILE MENU FIX */
+#nav-links {
+    backdrop-filter: none;
+}
 
-
-
+@media (max-width: 768px) {
+    #nav-links {
+        background: #132419;
+    }
+}
 
 /* HOLE CARDS */
 .hole-card {
@@ -141,31 +144,7 @@ body {
 
 /* HERO */
 .hero-bg { 
-    background: 
-        linear-gradient(
-            to top,
-            rgba(19,36,25,1) 0%,
-            rgba(19,36,25,0.85) 25%,
-            rgba(19,36,25,0.4) 60%,
-            rgba(19,36,25,0) 100%
-        ),
-		#h-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-#course .bg-gradient-to-t {
-    z-index: 1;
-}
-        url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
-    background-size: cover; 
-    background-position: center;
-}
-        url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
     background-size: cover; 
     background-position: center;
 }
@@ -214,8 +193,7 @@ button:active, a:active { transform: scale(0.97); }
             <div class="w-6 h-0.5 bg-[#C5A367]"></div>
         </button>
 
-    <div id="nav-links"
-class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-[#132419]/95 opacity-100 translate-x-full transition-transform duration-500 md:static md:flex md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8">
+     <div id="nav-links" class="fixed inset-0 z-[90] flex flex-col items-center justify-center gap-8 bg-[#132419] translate-x-full transition-all ease-[cubic-bezier(0.77,0,0.18,1)] duration-500 md:static md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8">
 
     <a href="#" class="hover:text-[#C5A367] transition">Home</a>
     <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
@@ -303,13 +281,7 @@ class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="group relative h-[450px] overflow-hidden bg-[#132419]">
                     <img src="images/clubhouse.webp" alt="Clubhouse Lounge" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition duration-700">
-                   <div class="absolute inset-0 
-bg-gradient-to-t 
-from-[#132419]/95 
-via-[#132419]/80 
-via-[#132419]/50 
-to-transparent">
-</div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-10 bg-gradient-to-t from-[#132419] via-[#132419]/40 to-transparent">
                         <h3 class="serif text-4xl text-white mb-2">The Clubhouse</h3>
                         <p class="text-white/70 text-sm mb-8 font-light italic leading-relaxed">Experience panoramic views across the course from our recently refurbished first-floor lounge.</p>
                         <a href="clubhouse.html" class="inline-block border border-[#C5A367] text-[#C5A367] px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-[#C5A367] hover:text-white transition w-fit">Explore the Lounge</a>
@@ -377,15 +349,13 @@ to-transparent">
                 <div id="hole-nav-container" class="flex md:flex-col overflow-x-auto md:overflow-y-auto custom-scrollbar gap-2 pb-4 md:h-[600px]"></div>
             </div>
             <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
-                <div class="h-64 md:h-[400px] relative overflow-hidden">
-				<img id="h-img"
-class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-src=""
-alt="Hole Image">
-<div class="absolute inset-0 bg-gradient-to-t 
-from-[#132419]/70 
-via-[#132419]/30 
-to-transparent">
+                <div class="h-64 md:h-[400px] bg-black relative overflow-hidden">
+
+    <img id="h-img"
+     class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
+
+  <div class="absolute inset-0 bg-gradient-to-t from-[#132419] via-[#132419]/30 to-transparent"></div> 
+
 </div>
                <div class="p-8 md:p-12 bg-[#132419]">
                     <div class="flex justify-between items-start mb-8 border-b border-white/10 pb-6">
@@ -596,14 +566,14 @@ function setHole(n){
     imgIndex=0;
 
     function showImage(){
-    img.style.opacity = 0;
+        img.style.opacity=0.2;
 
-    setTimeout(() => {
-        img.src = h.imgs[imgIndex];
-        img.style.opacity = 1;
-        imgIndex = (imgIndex + 1) % h.imgs.length;
-    }, 200);
-}
+        setTimeout(()=>{
+            img.src=h.imgs[imgIndex];
+            img.style.opacity=1;
+            imgIndex=(imgIndex+1)%h.imgs.length;
+        },200);
+    }
 
     showImage();
     imgInterval=setInterval(showImage,3000);
@@ -683,25 +653,17 @@ const menuBtn=document.getElementById('menu-btn');
 const navLinks=document.getElementById('nav-links');
 
 function closeMenu(){
-    navLinks.classList.remove('translate-x-0');
     navLinks.classList.add('translate-x-full');
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow='auto';
 }
-
 function openMenu(){
     navLinks.classList.remove('translate-x-full');
-    navLinks.classList.add('translate-x-0');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow='hidden';
 }
 
-menuBtn.onclick = (e) => {
+menuBtn.onclick=(e)=>{
     e.stopPropagation();
-
-    if (navLinks.classList.contains('translate-x-0')) {
-        closeMenu();
-    } else {
-        openMenu();
-    }
+    navLinks.classList.contains('translate-x-full')?openMenu():closeMenu();
 };
 
 document.querySelectorAll('#nav-links a').forEach(link=>{
