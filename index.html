@@ -23,9 +23,8 @@ body {
 
 /* HEADER */
 .nav-blur {
-    background: rgba(19, 36, 25, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(19, 36, 25, 0.92);
+    backdrop-filter: blur(8px);
 }
    
 .nav-blur {
@@ -145,11 +144,27 @@ body {
     background: 
         linear-gradient(
             to top,
-            rgba(19,36,25,0.85) 0%,
-            rgba(19,36,25,0.6) 40%,
-            rgba(19,36,25,0.2) 70%,
+            rgba(19,36,25,1) 0%,
+            rgba(19,36,25,0.85) 25%,
+            rgba(19,36,25,0.4) 60%,
             rgba(19,36,25,0) 100%
         ),
+		#h-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#course .bg-gradient-to-t {
+    z-index: 1;
+}
+        url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
+    background-size: cover; 
+    background-position: center;
+}
         url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?q=80');
     background-size: cover; 
     background-position: center;
@@ -362,14 +377,14 @@ to-transparent">
                 <div id="hole-nav-container" class="flex md:flex-col overflow-x-auto md:overflow-y-auto custom-scrollbar gap-2 pb-4 md:h-[600px]"></div>
             </div>
             <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
-                <div class="h-64 md:h-[400px] bg-black relative overflow-hidden">
+                <div class="h-64 md:h-[400px] relative overflow-hidden">
 				<img id="h-img"
 class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
 src=""
 alt="Hole Image">
 <div class="absolute inset-0 bg-gradient-to-t 
-from-[#132419]/90 
-via-[#132419]/50 
+from-[#132419]/70 
+via-[#132419]/30 
 to-transparent">
 </div>
                <div class="p-8 md:p-12 bg-[#132419]">
