@@ -347,14 +347,17 @@ class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-
                 <div id="hole-nav-container" class="flex md:flex-col overflow-x-auto md:overflow-y-auto custom-scrollbar gap-2 pb-4 md:h-[600px]"></div>
             </div>
             <div class="md:w-2/3 bg-[#132419] rounded shadow-2xl overflow-hidden">
-                <div class="h-64 md:h-[400px] bg-black relative overflow-hidden">
+             <div class="h-72 md:h-[400px] bg-black relative overflow-hidden">
 
     <img id="h-img"
-     class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
+         src="images/hole1.webp"
+         class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
 
-  <div class="absolute inset-0 bg-gradient-to-t from-[#132419] via-[#132419]/30 to-transparent"></div> 
+    <div class="absolute inset-0 bg-gradient-to-t from-[#132419]/80 via-[#132419]/20 to-transparent"></div>
 
-</div>
+</div>  
+
+    
                <div class="p-8 md:p-12 bg-[#132419]">
                     <div class="flex justify-between items-start mb-8 border-b border-white/10 pb-6">
                         <div>
@@ -564,7 +567,7 @@ function setHole(n){
     imgIndex=0;
 
     function showImage(){
-        img.style.opacity=0.2;
+        img.style.opacity = 0;
 
         setTimeout(()=>{
             img.src=h.imgs[imgIndex];
