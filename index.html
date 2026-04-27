@@ -675,17 +675,25 @@ const menuBtn=document.getElementById('menu-btn');
 const navLinks=document.getElementById('nav-links');
 
 function closeMenu(){
+    navLinks.classList.remove('translate-x-0');
     navLinks.classList.add('translate-x-full');
-    document.body.style.overflow='auto';
-}
-function openMenu(){
-    navLinks.classList.remove('translate-x-full');
-    document.body.style.overflow='hidden';
+    document.body.style.overflow = 'auto';
 }
 
-menuBtn.onclick=(e)=>{
+function openMenu(){
+    navLinks.classList.remove('translate-x-full');
+    navLinks.classList.add('translate-x-0');
+    document.body.style.overflow = 'hidden';
+}
+
+menuBtn.onclick = (e) => {
     e.stopPropagation();
-    navLinks.classList.contains('translate-x-full')?openMenu():closeMenu();
+
+    if (navLinks.classList.contains('translate-x-0')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 };
 
 document.querySelectorAll('#nav-links a').forEach(link=>{
