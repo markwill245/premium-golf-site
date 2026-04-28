@@ -191,7 +191,7 @@ button:active, a:active { transform: scale(0.97); }
         </button>
 
     <div id="nav-links"
-class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-[#132419]/95 opacity-100 translate-x-full transition-transform duration-500 md:static md:flex md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8">
+class="fixed inset-0 z-[999] flex flex-col items-center justify-center gap-8 bg-[#132419]/95 opacity-0 translate-x-full transition-transform duration-500 md:static md:flex md:flex-row md:bg-transparent md:translate-x-0 text-[14px] uppercase tracking-[0.3em] font-semibold px-8"
 
     <a href="#" class="hover:text-[#C5A367] transition">Home</a>
     <a href="#course" class="hover:text-[#C5A367] transition">Course Guide</a>
@@ -554,6 +554,9 @@ let imgInterval;
 function setHole(n){
     const h=courseData[n];
     const img=document.getElementById('h-img');
+	 img.onerror = () => {
+        img.src = 'images/hole1.webp';
+    };
 
     document.getElementById('h-num').innerText=n.toString().padStart(2,'0');
     document.getElementById('h-name').innerText=h.name;
@@ -655,14 +658,14 @@ const menuBtn=document.getElementById('menu-btn');
 const navLinks=document.getElementById('nav-links');
 
 function closeMenu(){
-    navLinks.classList.remove('translate-x-0');
-    navLinks.classList.add('translate-x-full');
+    navLinks.classList.remove('translate-x-0','opacity-100');
+    navLinks.classList.add('translate-x-full','opacity-0');
     document.body.style.overflow = 'auto';
 }
 
 function openMenu(){
-    navLinks.classList.remove('translate-x-full');
-    navLinks.classList.add('translate-x-0');
+    navLinks.classList.remove('translate-x-full','opacity-0');
+    navLinks.classList.add('translate-x-0','opacity-100');
     document.body.style.overflow = 'hidden';
 }
 
