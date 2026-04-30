@@ -1,0 +1,26 @@
+/* Color Variables - The 'Control Center' */
+:root {
+    --gold: #C5A367;
+    --forest: #132419;
+    --cream: #F9F7F2;
+    --dark-bg: #0b1610;
+}
+
+/* Base Styles */
+body { 
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--cream); 
+    color: var(--forest); 
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Cormorant Garamond', serif; }
+
+/* Use the variables throughout the rest of your code */
+.nav-blur {
+    background: rgba(19, 36, 25, 0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ... Paste the rest of your existing CSS below this ... */
